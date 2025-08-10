@@ -10,13 +10,16 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "start": "node dist/index.js",
-    "prepublishOnly": "npm run build && npm run readme:swap",
-    "readme:swap": "mv README.md README.github.md && mv README.npm.md README.md",
-    "postpublish": "mv README.md README.npm.md && mv README.github.md README.md"
+    "prepublishOnly": "npm run build && cp README.md README.github.md && cp README.npm.md README.md",
+    "postpublish": "cp README.github.md README.md && rm README.github.md"
   },
   "keywords": ["mcp", "model-context-protocol", "unsplash", "image-search"],
   "author": "abutoku",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abutoku/search-image-mcp"
+  },
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^24.1.0",

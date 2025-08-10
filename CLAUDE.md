@@ -11,6 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### npm公開
 - `npm publish` - npmに公開（prepublishOnly/postpublishフックでREADMEファイルを自動切り替え）
+- `npm publish --dry-run` - 公開のテスト実行
 
 ## アーキテクチャ
 
@@ -34,7 +35,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `README.md` - GitHub/ローカル開発用ドキュメント
 - `README.npm.md` - npmパッケージドキュメント
 
-package.jsonスクリプトがnpm publish時に自動的にこれらを切り替えます。
+package.jsonの`prepublishOnly`と`postpublish`フックがnpm publish時に自動的にこれらを切り替えます。コピー方式を使用しているため、ファイルの消失リスクがありません。
 
 ## 環境要件
 - **必須**: `UNSPLASH_ACCESS_KEY`環境変数の設定が必要

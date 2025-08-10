@@ -1,5 +1,4 @@
-
-# get-image-mcp
+# search-image-mcp
 
 Unsplash APIを使用した画像検索機能を提供するMCPサーバーです。
 
@@ -73,4 +72,21 @@ Unsplashで画像を検索します。
 - TypeScriptをウォッチモードで実行: `npm run dev`
 - ビルド: `npm run build`
 - サーバー起動: `npm start`
+
+
+## npm
+
+```json
+{
+  "mcpServers": {
+    "search-image-mcp": {
+      "command": "npx",
+      "args": ["@abutoku/search-image-mcp"],
+      "env": {
+        "UNSPLASH_ACCESS_KEY": "your-unsplash-access-key-here"
+      }
+    }
+  }
+}
+```
 
