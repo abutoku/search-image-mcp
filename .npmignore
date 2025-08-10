@@ -1,0 +1,26 @@
+# ソースコード
+src/
+tsconfig.json
+
+# 開発用ファイル
+README.github.md
+README.npm.md
+CLAUDE.md
+.gitignore
+.git/
+
+# その他の開発ファイル
+*.log
+.DS_Store
+.env
+.env.local
+
+# テストファイル
+test/
+tests/
+*.test.ts
+*.spec.ts
+
+# 開発ドキュメント
+docs/
+examples/

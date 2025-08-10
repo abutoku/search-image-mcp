@@ -1,0 +1,29 @@
+{
+  "name": "search-image-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for searching images on Unsplash",
+  "main": "dist/index.js",
+  "bin": {
+    "search-image-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build && npm run readme:swap",
+    "readme:swap": "mv README.md README.github.md && mv README.npm.md README.md",
+    "postpublish": "mv README.md README.npm.md && mv README.github.md README.md"
+  },
+  "keywords": ["mcp", "model-context-protocol", "unsplash", "image-search"],
+  "author": "abutoku",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "axios": "^1.11.0"
+  }
+}
