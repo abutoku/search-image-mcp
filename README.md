@@ -74,7 +74,7 @@ Unsplashで画像を検索します。
 - サーバー起動: `npm start`
 
 
-## npm
+## npx
 
 ```json
 {

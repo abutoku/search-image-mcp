@@ -1,11 +1,9 @@
 {
-  "name": "search-image-mcp",
-  "version": "1.0.0",
+  "name": "@abutoku/search-image-mcp",
+  "version": "1.0.1",
   "description": "MCP server for searching images on Unsplash",
   "main": "dist/index.js",
-  "bin": {
-    "search-image-mcp": "dist/index.js"
-  },
+  "bin": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
