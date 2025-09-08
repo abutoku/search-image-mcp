@@ -9,11 +9,16 @@ CLAUDE.md
 .gitignore
 .git/
 
+# Docker関連
+Dockerfile
+docker-compose.yml
+.dockerignore
+
 # その他の開発ファイル
 *.log
 .DS_Store
 .env
-.env.local
+.env.example
 
 # テストファイル
 test/

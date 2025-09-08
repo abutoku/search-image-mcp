@@ -73,6 +73,36 @@ Unsplashで画像を検索します。
 - ビルド: `npm run build`
 - サーバー起動: `npm start`
 
+## Docker
+
+### Dockerイメージのビルド
+
+```bash
+npm run docker:build
+```
+
+### Docker Hubへのプッシュ
+
+```bash
+# Docker Hubのユーザー名を設定
+export DOCKER_USERNAME="your-docker-username"
+
+# ビルドしてプッシュ
+npm run docker:publish
+```
+
+または個別に実行：
+
+```bash
+# イメージをビルド
+npm run docker:build
+
+# タグ付け
+npm run docker:tag
+
+# プッシュ
+npm run docker:push
+```
 
 ## npx
 
@@ -88,5 +118,62 @@ Unsplashで画像を検索します。
     }
   }
 }
+```
+
+## docker
+
+ローカルのdocker imageを指定する場合:
+```json
+Docker Hubに公開されたイメージをMCPサーバーとして使用する場合：
+
+```json
+{
+  "mcpServers": {
+    "search-image-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "UNSPLASH_ACCESS_KEY=your-unsplash-access-key-here",
+        "search-image-mcp:latest"
+      ]
+    }
+  }
+}
+```
+
+Docker Hubに公開されたイメージをMCPサーバーとして使用する場合：
+
+```json
+{
+  "mcpServers": {
+    "search-image-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "UNSPLASH_ACCESS_KEY=your-unsplash-access-key-here",
+        "abutoku/search-image-mcp:latest"
+      ]
+    }
+  }
+}
+```
+
+docker-composeを仕様する場合：
+
+docker-compose.ymlに追記
+```yaml
+services:
+  search-image-mcp:
+    image: abutoku/search-image-mcp:latest
+    environment:
+      - UNSPLASH_ACCESS_KEY=${UNSPLASH_ACCESS_KEY}
+    stdin_open: true
+    tty: true
 ```
 

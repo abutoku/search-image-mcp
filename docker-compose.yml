@@ -1,0 +1,18 @@
+services:
+  search-image-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: search-image-mcp:latest
+    container_name: search-image-mcp
+    environment:
+      - UNSPLASH_ACCESS_KEY=${UNSPLASH_ACCESS_KEY}
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
